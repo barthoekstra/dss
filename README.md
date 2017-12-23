@@ -1,0 +1,16 @@
+# dss (Data Science Stack)
+
+This docker image runs Python 3 using Miniconda. The following packages are pre-installed:
+* [numpy](http://www.numpy.org/)
+* [matplotlib](https://matplotlib.org/)
+* [seaborn](https://seaborn.pydata.org/)
+* [pandas](https://pandas.pydata.org/)
+* [statsmodels](http://www.statsmodels.org/)
+* [scikit-learn](http://scikit-learn.org/)
+* [scikit-image](http://scikit-image.org/)
+* [tensorflow](https://www.tensorflow.org/)
+* [bokeh](https://bokeh.pydata.org/)
+* [cython](http://cython.org/)
+* [sympy](http://www.sympy.org/)
+* [patsy](https://patsy.readthedocs.io/)
+* [numba](https://numba.pydata.org/)
