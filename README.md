@@ -2,6 +2,7 @@
 
 This docker image runs Python 3 using Miniconda. The following packages are pre-installed:
 * [numpy](http://www.numpy.org/)
+* [scipy](https://www.scipy.org/)
 * [matplotlib](https://matplotlib.org/)
 * [seaborn](https://seaborn.pydata.org/)
 * [pandas](https://pandas.pydata.org/)
