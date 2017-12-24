@@ -16,7 +16,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     rm ~/miniconda.sh && export PATH=/opt/conda/bin:$PATH && \
     conda update -y --all && \
     conda install -y numpy scipy matplotlib seaborn pandas statsmodels \
-    scikit-learn scikit-image tensorflow bokeh cython sympy patsy numba && \
+    scikit-learn scikit-image tensorflow bokeh cython sympy patsy numba \
+    jupyter notebook && \
     conda clean -y -t
 
 ENV PATH /opt/conda/bin:$PATH
