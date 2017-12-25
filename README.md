@@ -25,3 +25,10 @@ Assuming you have already [installed Docker](https://docs.docker.com/engine/inst
 5. Create a new Jupyter Python 3 Notebook: New (top right) > Python 3. This file will be stored in your `$PWD`, the working directory on your host which you have set in step 3.
 6. (Do whatever you want to use the data science stack for).
 7. Quit the Docker container by pressing `CTRL-C` twice in the Terminal/CMD window.
+
+## How does this work?
+The [Docker documentation](https://docs.docker.com/get-started/#a-brief-explanation-of-containers) describes a Docker image and container as follows:
+> An **image** is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and config files.
+> A **container** is a runtime instance of an image—what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so.
+
+In the case of this Docker image, the 'piece of sotware' is a Jupyter Notebook environment running Python 3 and a bunch of packages related to data science. The contents and configuration of the image are described in this repository's [Dockerfile](https://github.com/barthoekstra/dss/blob/master/Dockerfile) (have a look to see at what lines, for example, the packages are installed). Whenever the Dockerfile in this repository gets updated (i.e. the updated file is pushed to the repository), [Docker Hub](https://hub.docker.com) will initiate an automatic 'build' of this Dockerfile and turn it into an image, which can then be downloaded using `docker pull barthoekstra/dss`.
