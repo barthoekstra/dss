@@ -1,6 +1,6 @@
 # DSS (Data Science Stack)
 
-This docker image runs Python 3 using Miniconda and [Jupyter Notebook](http://jupyter.org/). The following packages are pre-installed:
+This Docker image runs Python 3 using Miniconda and [Jupyter Notebook](http://jupyter.org/). The following packages are pre-installed:
 * [numpy](http://www.numpy.org/)
 * [scipy](https://www.scipy.org/)
 * [matplotlib](https://matplotlib.org/)
@@ -24,7 +24,7 @@ Assuming you have already [installed Docker](https://docs.docker.com/engine/inst
 4. The output of the `docker run` command should now show a URL to copy-paste. Open this URL — including the token — in your browser and your data science environment should be working. Did you notice the :8888 in the url? This is the [port](https://en.wikipedia.org/wiki/Port_(computer_networking)) you have defined in step 3.
 5. Create a new Jupyter Python 3 Notebook: New (top right) > Python 3. This file will be stored in your `$PWD`, the working directory on your host which you have set in step 3.
 6. (Do whatever you want to use the data science stack for).
-7. Quit the Docker container by pressing `CTRL-C` twice in the Terminal/CMD window.
+7. Quit the docker container by pressing `CTRL-C` twice in the Terminal/CMD window.
 
 ## How does this work?
 The [Docker documentation](https://docs.docker.com/get-started/#a-brief-explanation-of-containers) describes a Docker image and container as follows:
