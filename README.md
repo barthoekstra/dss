@@ -36,3 +36,16 @@ In the case of this Docker image, the 'piece of software' is a Jupyter Notebook 
 
 ## Build your own image
 It is possible to build your own image from a Dockerfile, without using Docker Hub. Make sure you have cloned this repository somewhere locally on your system (or at least have a valid Dockerfile stored somewhere), navigate to the folder these files are stored in (using `cd`) and then run the following command: `docker build -t imagename .`, where you replace `imagename` with your desired name. The `.` is added to make Docker build an image from the Dockerfile in the current directory (which you have moved to). Once all build steps are completed, you can run your Docker image (i.e. run a container) using the same command listed above (see [How to use DSS](https://github.com/barthoekstra/dss#how-to-use-dss) bullet 3), but by changing `barthoekstra/dss` into the `imagename` you have just defined.
+
+## Install additional packages / Execute commands in the container
+Let's say we need to scrape data from a website using the [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) package, but it is not yet installed in the Docker container/image. There are two ways to install it:
+1. You install it by adding it in the right section of the Dockerfile and afterwards you rebuild the new image from this file.
+2. You install the package in a running container.
+
+The first is straightforward, and explained above, the latter is a bit more complicated:
+1. Make sure your container is running using the `docker run` command listed above (see [How to use DSS](https://github.com/barthoekstra/dss#how-to-use-dss)).
+2. Run the `docker ps` command in your Terminal/CMD window. This lists all the containers you have ever started on your system. If you're new to Docker and have not played around with it before, this should only show 1 container, the one we have created in the former steps. So, the only listed `IMAGE` should be `barthoekstra/dss`. The last column contains a generic name assigned to this container, such as `hardcore_khorana`.
+3. Access the Terminal/CMD window (shell) of the running Docker container using the following command: `docker exec -it hardcore_khorana bash` (replacing `hardcore_khorana` with the name listed in the last column shown by the `docker ps` command). If this worked, you should see that you are now 'logged in' to the container with a root user account (you should see something like `root@b40faa2af75`) and the working directory has changed to the value set when starting the container (in this case `\tmp`).
+4. Now simply install the BeautifulSoup4 package using the `conda` command: `conda install beautifulsoup4`.
+
+Similarly, all tasks that require access to the container while it is running can be executed by first logging in to the container shell using `docker exec -it [containername] bash`.
